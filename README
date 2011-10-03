@@ -1,0 +1,25 @@
+Author : Stephen Murphy
+
+This python package contains two classes.
+
+The tag class is a helper class used to detect and 
+replace tags in template strings.
+
+The template class is used to create and populate templates.
+
+Example template string code:
+
+msg = "<+greet+>, <+object+>!"
+
+vals = dict()
+
+#The dictionary keys corespond to the tags
+#in the template string
+
+vals['greet'] = "hello"
+vals['object'] = "world"
+
+template = Template(msg)
+complete = template.populate_with(vals)
+
+print complete #outputs "hello, world!"
